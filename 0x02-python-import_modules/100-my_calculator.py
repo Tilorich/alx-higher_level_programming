@@ -18,4 +18,5 @@ if __name__ == "__main__":
     elif sys.argv[2] == operator[3]:
         print("{} {} {} = {}".format(a, operator[3]. b, mul(a, b)))
     else:
-        print("Unknown operator. Available operators: +, -, * and /")
+        print("Unknown operator. Available operators:i +, -, * and /")
+        sys.exit(1)
