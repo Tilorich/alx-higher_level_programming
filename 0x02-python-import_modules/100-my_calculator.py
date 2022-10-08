@@ -7,16 +7,11 @@ if __name__ == "__main__":
         print("Usage: .//100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    if sys.argv[2] == operator[0]:
-        print("{} {} {} = {}".format(a, operator[0], b, add(a, b)))
-    elif sys.argv[2] == operator[1]:
-        print("{} {} {} = {}".format(a, operator[1], b, sub(a, b)))
-    elif sys.argv[2] == operator[2]:
-        print("{} {} {} = {}".format(a, operator[2], b, div(a, b)))
-    elif sys.argv[2] == operator[3]:
-        print("{} {} {} = {}".format(a, operator[3]. b, mul(a, b)))
-    else:
+    dic = {'+': add, '-': sub, '*': mul, '/': div}
+    if sys.argv[2] not in list(dic.keys()):
         print("Unknown operator. Available operators:i +, -, * and /")
         sys.exit(1)
+
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    print("{} {} {} = {}".format(a, sys.argv[2], b, dic[sys.argv[2]](a, b)))
