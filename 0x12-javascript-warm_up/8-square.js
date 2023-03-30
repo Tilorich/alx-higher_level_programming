@@ -11,4 +11,3 @@ if (isNaN(info) || info === undefined) {
     console.log(row);
   }
 }
-
